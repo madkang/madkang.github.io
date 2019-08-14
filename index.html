@@ -284,6 +284,131 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/hexo搭建事项/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MadKang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MadKang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/14/hexo搭建事项/" itemprop="url">hexo搭建事项</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-14T20:46:30+08:00">
+                2019-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="hexo的备份问题"><a href="#hexo的备份问题" class="headerlink" title="hexo的备份问题"></a>hexo的备份问题</h2><p>hexo本身的搭建并不困难，可以根据hexo的官方文档，亦或是其他人的搭建经验，可以比较轻松地搭建。而其中的具体细节，例如主题，头像，访问统计等后续优化内容可以在必要时临时查看相关文档，毕竟不是想成为hexo专家。</p>
+<p>搭建完以后有一个很困扰的问题，如果某天我的电脑突然炸裂，我该怎么办？重新配置将又是一场恶战，费时费力。因而各种搜索关于“hexo“备份的解决方案。</p>
+<p>最终决定利用git中的分支功能进行管理，有如下步骤。以下步骤建立在已经将hexo部署到本地，并关联上GitHub的<code>xxx.github.io</code>仓库的基础上，对于尚未在本地搭建hexo的情况不适用（最后有补充说明）。</p>
+<p>分别用默认的master分支管理静态文件和用自建的hexo分支管理配置文件。第一步，GitHub中创建hexo分支，并设为默认分支；第二步，clone <code>xxxx.github.io</code>（这个为GitHub的个人主页仓库）到本地，将文件夹中的<code>.git</code>文件复制到hexo文件夹（本地搭建hexo的文件夹）当中；第三步，查看hexo文件夹下的<code>_config.yml</code>中deploy配置是否为master分支；第四步，<code>git branch</code>，查看当前分支，应当为hexo，依次执行<code>git add .、git commit -m &quot;...&quot;、git push origin hexo</code>提交网站相关的文件；第五步，执行<code>hexo g -d</code>生成网站并部署到GitHub上。</p>
+<p>对步骤进行说明，第二步的作用是为了将本地的整个hexo文件夹关联到<code>xxx.github.io</code>仓库，如果本地文件夹没有<code>.git</code>文件夹，当前的本地文件夹没有关联到任何仓库，第四步也就无法进行；第四步将整个本地的hexo文件夹里所有内容存储到<code>xxx.github.io</code>中的hexo分支（hexo被设置为默认分支），但由于本地文件夹hexo中的<code>.gitignore</code>文件的存在–该文件指定了上传时需忽略的文件–最终被存储到hexo分支的只有最相关的配置文件；注意区分hexo分支和本地hexo文件夹。</p>
+<p>对于仅仅在GitHub中创建了一个<code>xxx.github.io</code>仓库的情况，可以参考<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="noopener">知乎中的高票回答</a>。本文也主要参照了该回答的步骤和方法<br>（如有侵权，联系修改、删除）。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/16/article-title/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -354,7 +479,7 @@
 
       
         
-          <h1 id="折腾"><a href="#折腾" class="headerlink" title="折腾"></a>折腾</h1><p>一直觉得有个博客挺酷的，也挺重要。看到别人用hexo+GitHub Pages 搭建挺不错的，遂折腾两  天，算是基本完成。  </p>
+          <h2 id="折腾"><a href="#折腾" class="headerlink" title="折腾"></a>折腾</h2><p>一直觉得有个博客挺酷的，也挺重要。看到别人用hexo+GitHub Pages 搭建挺不错的，遂折腾两  天，算是基本完成。  </p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/07/16/article-title/#more" rel="contents">
@@ -441,7 +566,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -454,7 +579,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
